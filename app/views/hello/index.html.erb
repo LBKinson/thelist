@@ -2,9 +2,9 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Caption</th>
-				<th>Picture</th>
-				<th colspan="3"></th>
+				<th colspan="1">Caption</th>
+				<th colspan="3">Picture</th>
+				<th colspan="3">Date</th>
 			</tr>
 		</thead>
 
@@ -12,7 +12,11 @@
 			<% @result.each do |post| %>
 				<tr>
 					<td><%= sanitize post["caption"] %></td>
-					<td><%= image_tag post["image_permalink"], width: '50px' %></td>
+					<td><%= image_tag post["photos"][0]["alt_sizes"][0]["url"], width: "250px" %></td>
+					<td><%= post["date"] %></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 			<% end %>
 		</tbody>
